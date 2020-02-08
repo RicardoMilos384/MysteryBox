@@ -26,6 +26,7 @@ use pocketmine\entity\Entity;
 use pocketmine\math\Vector3;
 
 use pocketmine\level\particle\HeartParticle;
+use pocketmine\level\particle\LavaParticle;
 use pocketmine\level\particle\HugeExplodeSeedParticle;
 use pocketmine\level\particle\FloatingTextParticle;
 
@@ -151,6 +152,7 @@ class MysterySkull extends Entity{
 		}
 		
 		$this->getLevel()->addParticle(new HeartParticle($this->asVector3()));
+                $this->getLevel()->addParticle(new LavaParticle($this->asVector3()));
 		
 		if($this->stay_time >= 60){
 			$this->motion->y = -0.05;
